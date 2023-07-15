@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiiiiii</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        p {
+            font-size: 32px;
+            font-family: Candara, Oswald;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+        }
+
+        .buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 18px;
+        }
+
+        #botao1,
+        #botao2 {
+            position: relative;
+            top: 0;
+            transition: top 0.5s ease-in-out;
+        }
+
+        /* Media Queries */
+        @media (min-width: 601px) {
+            body {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p>Hey, can I ask you a sweet question?</p>
+        <img src="Media/How are you.gif" alt="How are you?">
+
+        <div class="buttons">
+            <button id="botao1" class="button">TOTALLY <br> FINE! :)</button>
+            <button id="botao2" class="button">SAD</button>
+        </div>
+    </div>
+
+    <script>
+        const button1 = document.getElementById('botao1');
+        const button2 = document.getElementById('botao2');
+        let clickCount = 0;
+
+        function moveButton() {
+            if (button2.style.top === '') {
+                button2.style.top = '10';
+            }
+
+            if (button2.style.top === '10') {
+                button2.style.top = '50%';
+            } else {
+                button2.style.top = '10';
+            }
+        }
+
+        button1.addEventListener('click', function() {
+            alert('OH THAT\'S SO NICE TO HEAR🤩');
+            moveButton();
+        });
+
+        button2.addEventListener('click', function() {
+            clickCount++;
+            if (clickCount >= 4) {
+                alert('Aww, I hope things get better soon!🙂');
+                clickCount = 0;
+            }
+            moveButton();
+        });
+    </script>
+</body>
+</html>
